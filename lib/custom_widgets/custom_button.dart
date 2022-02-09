@@ -174,3 +174,44 @@ class CMenuButton extends StatelessWidget {
     );
   }
 }
+
+//4:CButton
+class CColoredButton extends StatelessWidget {
+  final String title;
+  final void Function()? onClick;
+  Color? color;
+
+  CColoredButton({
+    Key? key,
+    required this.title,
+    this.onClick,
+    this.color=Colors.redAccent
+  }) : super(key: key);
+
+
+
+  @override
+  Widget build(BuildContext context) {
+    return  CustomOnHoverMouseRegion(
+      customWidget: Material(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(5),
+        ),
+        color: color,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(5),
+          onTap: onClick,
+          child: Padding(
+            padding: AppStyle.buttonPadding,
+            child: Text(
+                title,
+                style: TextStyle(
+                  color: Colors.white,
+                )
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
