@@ -21,6 +21,16 @@ dependencies:
   # Used only to change numbers rapidly
   holding_gesture: ^1.1.0
 
+  #Customizable Icons for Flutter
+  flutter_icons:
+    git:
+      url: https://github.com/adarsh-technocrat/flutter-icons.git
+      branch: null-safety-migration
+  #A library to draw fantastic charts in Flutter
+  fl_chart: ^0.36.1
+  #Draw SVG files on a Flutter Widget.
+  flutter_svg: ^0.22.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

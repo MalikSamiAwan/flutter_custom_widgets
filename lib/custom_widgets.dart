@@ -10,9 +10,11 @@ import 'package:multi_select_flutter/util/multi_select_item.dart';
 import 'package:multi_select_flutter/util/multi_select_list_type.dart';
 import 'package:overlay_support/overlay_support.dart';
 import 'package:holding_gesture/holding_gesture.dart';
+import 'package:fl_chart/fl_chart.dart';
 
 import './custom_widgets/app_style.dart';
 import './custom_widgets/helper.dart';
+import './dashboard/daily_info_model.dart';
 
 
 part './custom_widgets/custom_arrow_back.dart';
@@ -38,6 +40,6 @@ part './custom_widgets/custom_selectable_button.dart';
 part './custom_widgets/custom_text.dart';
 part './custom_widgets/custom_text_field.dart';
 
-
+part './dashboard/mini_information_widget.dart';
 
 
