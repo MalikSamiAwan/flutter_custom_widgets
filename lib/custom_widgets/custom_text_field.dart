@@ -15,6 +15,7 @@ class CTextField extends StatefulWidget {
   final bool autoFocus;
   double order;
   bool hasTitle;
+  bool obscureText;
   CTextField({
     Key? key,
     required this.title,
@@ -30,6 +31,7 @@ class CTextField extends StatefulWidget {
     this.order=0,
     this.readOnly,
     this.hasTitle=true,
+    this.obscureText=false,
   }) : super(key: key);
 
   @override
@@ -69,6 +71,7 @@ class _CTextFieldState extends State<CTextField> {
           FocusTraversalOrder(
             order: NumericFocusOrder(widget.order),
             child: TextFormField(
+              obscureText: widget.obscureText,
               onFieldSubmitted: widget.onFieldSubmitted,
               readOnly: widget.readOnly??false,
               controller: controller,
