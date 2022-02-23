@@ -39,6 +39,7 @@ part './custom_widgets/custom_select_field.dart';
 part './custom_widgets/custom_selectable_button.dart';
 part './custom_widgets/custom_text.dart';
 part './custom_widgets/custom_text_field.dart';
+part './custom_widgets/clear_icon.dart';
 
 part './dashboard/mini_information_widget.dart';
 
