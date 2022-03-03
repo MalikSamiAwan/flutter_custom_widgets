@@ -58,7 +58,7 @@ class _CustomDownloadableButtonState extends State<CustomDownloadableButton> {
                       if (isPressed) ...[
                         WidgetSpan(
                             alignment: PlaceholderAlignment.middle,
-                            child: CircularProgressIndicator(color: Colors.white,value: 18,)),
+                            child: CircularProgressIndicator(color: Colors.white,value: 8,)),
                       ] else ...[
                         WidgetSpan(
                             alignment: PlaceholderAlignment.middle,
