@@ -45,8 +45,8 @@ class _CustomDownloadableButtonState extends State<CustomDownloadableButton> {
                 child: Text.rich(
                   TextSpan(
                     children: [
-                      TextSpan(text: '${widget.title} ',style: TextStyle(color: Colors.white,)),
-                      WidgetSpan(child: Icon(Icons.cloud_download_outlined,color: Colors.white,size: 12,)),
+                      TextSpan(text: '${widget.title} \t',style: TextStyle(color: Colors.white,)),
+                      WidgetSpan(alignment: PlaceholderAlignment.middle,child: Icon(Icons.cloud_download_outlined,color: Colors.white,size: 18,)),
                     ],
                   ),
                 )),
