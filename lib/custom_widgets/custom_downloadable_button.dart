@@ -28,7 +28,7 @@ class _CustomDownloadableButtonState extends State<CustomDownloadableButton> {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(5),
           ),
-          color: widget.color ?? AppStyle.customGreyColor,
+          color: widget.color ?? CupertinoColors.lightBackgroundGray,
           child: InkWell(
             borderRadius: BorderRadius.circular(5),
             onTap: () async {
@@ -48,7 +48,7 @@ class _CustomDownloadableButtonState extends State<CustomDownloadableButton> {
                       TextSpan(
                           text: '${widget.title}',
                           style: TextStyle(
-                            color: Colors.white,
+                            color: CupertinoColors.activeBlue,
                             fontSize: 12
                           )),
                       WidgetSpan(
@@ -60,13 +60,13 @@ class _CustomDownloadableButtonState extends State<CustomDownloadableButton> {
                         WidgetSpan(
                             alignment: PlaceholderAlignment.middle,
                             child: CupertinoActivityIndicator(
-                              radius: 10,color: Colors.white,)),
+                              radius: 10,color: CupertinoColors.activeBlue,)),
                       ] else ...[
                         WidgetSpan(
                             alignment: PlaceholderAlignment.middle,
                             child: Icon(
                               Icons.cloud_download_outlined,
-                              color: Colors.white,
+                              color: CupertinoColors.activeBlue,
                               size: 12,
                             )),
                       ]
