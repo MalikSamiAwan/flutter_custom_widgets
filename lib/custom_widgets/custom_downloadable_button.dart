@@ -59,7 +59,7 @@ class _CustomDownloadableButtonState extends State<CustomDownloadableButton> {
                         WidgetSpan(
                             alignment: PlaceholderAlignment.middle,
                             child: CupertinoActivityIndicator(
-                              radius: 10,)),
+                              radius: 10,color: Colors.white,)),
                       ] else ...[
                         WidgetSpan(
                             alignment: PlaceholderAlignment.middle,
