@@ -58,7 +58,8 @@ class _CustomDownloadableButtonState extends State<CustomDownloadableButton> {
                       if (isPressed) ...[
                         WidgetSpan(
                             alignment: PlaceholderAlignment.middle,
-                            child: CircularProgressIndicator(color: Colors.white,value: 8,backgroundColor: Colors.black,)),
+                            child: CupertinoActivityIndicator(
+                              radius: 10,)),
                       ] else ...[
                         WidgetSpan(
                             alignment: PlaceholderAlignment.middle,
