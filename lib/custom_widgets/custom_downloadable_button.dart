@@ -28,7 +28,7 @@ class _CustomDownloadableButtonState extends State<CustomDownloadableButton> {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(5),
           ),
-          color: widget.color ?? AppStyle.customB,
+          color: widget.color ?? AppStyle.customGreyColor,
           child: InkWell(
             borderRadius: BorderRadius.circular(5),
             onTap: () async {
@@ -49,6 +49,7 @@ class _CustomDownloadableButtonState extends State<CustomDownloadableButton> {
                           text: '${widget.title}',
                           style: TextStyle(
                             color: Colors.white,
+                            fontSize: 12
                           )),
                       WidgetSpan(
                           alignment: PlaceholderAlignment.middle,
@@ -66,7 +67,7 @@ class _CustomDownloadableButtonState extends State<CustomDownloadableButton> {
                             child: Icon(
                               Icons.cloud_download_outlined,
                               color: Colors.white,
-                              size: 18,
+                              size: 12,
                             )),
                       ]
                     ],
