@@ -45,9 +45,29 @@ class _CustomDownloadableButtonState extends State<CustomDownloadableButton> {
                 child: Text.rich(
                   TextSpan(
                     children: [
-                      TextSpan(text: '${widget.title}',style: TextStyle(color: Colors.white,)),
-                      WidgetSpan(alignment: PlaceholderAlignment.middle,child: SizedBox(width: 5,)),
-                      WidgetSpan(alignment: PlaceholderAlignment.middle,child: Icon(Icons.cloud_download_outlined,color: Colors.white,size: 18,)),
+                      TextSpan(
+                          text: '${widget.title}',
+                          style: TextStyle(
+                            color: Colors.white,
+                          )),
+                      WidgetSpan(
+                          alignment: PlaceholderAlignment.middle,
+                          child: SizedBox(
+                            width: 5,
+                          )),
+                      if (isPressed) ...[
+                        WidgetSpan(
+                            alignment: PlaceholderAlignment.middle,
+                            child: CustomProgressIndicator()),
+                      ] else ...[
+                        WidgetSpan(
+                            alignment: PlaceholderAlignment.middle,
+                            child: Icon(
+                              Icons.cloud_download_outlined,
+                              color: Colors.white,
+                              size: 18,
+                            )),
+                      ]
                     ],
                   ),
                 )),
