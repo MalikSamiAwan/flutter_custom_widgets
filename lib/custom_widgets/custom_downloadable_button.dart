@@ -48,7 +48,7 @@ class _CustomDownloadableButtonState extends State<CustomDownloadableButton> {
                       TextSpan(
                           text: '${widget.title}',
                           style: TextStyle(
-                            color: CupertinoColors.activeBlue,
+                            color: AppStyle.customB,
                               fontWeight: FontWeight.bold,
                             fontSize: 12
                           )),
