@@ -18,9 +18,9 @@ class _CustomDownloadableButtonState extends State<CustomDownloadableButton> {
   bool isPressed = false;
   @override
   Widget build(BuildContext context) {
-    if (isPressed) {
-      return CustomProgressIndicator();
-    }
+    // if (isPressed) {
+    //   return CustomProgressIndicator();
+    // }
     return CustomOnHoverMouseRegion(
       customWidget: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
