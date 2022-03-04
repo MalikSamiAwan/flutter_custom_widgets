@@ -16,6 +16,7 @@ class CTextField extends StatefulWidget {
   double order;
   bool hasTitle;
   bool obscureText;
+  bool showError;
   CTextField({
     Key? key,
     required this.title,
@@ -32,6 +33,7 @@ class CTextField extends StatefulWidget {
     this.readOnly,
     this.hasTitle=true,
     this.obscureText=false,
+    this.showError=false
   }) : super(key: key);
 
   @override
@@ -84,8 +86,15 @@ class _CTextFieldState extends State<CTextField> {
               maxLines: widget.expands ? null : widget.minLines,
               minLines: widget.expands ? null : widget.minLines,
               inputFormatters: [if (widget.numbersOnly) FilteringTextInputFormatter.digitsOnly],
-              decoration: InputDecoration(
-               errorStyle: AppStyle.errorTextStyle,
+              decoration: widget.showError?
+              InputDecoration(
+                isDense: true,
+                border: OutlineInputBorder(),
+                errorBorder: AppStyle.errorFieldBorder,
+                contentPadding: AppStyle.fieldContentPadding,
+              ):
+              InputDecoration(
+                errorStyle:  AppStyle.errorTextStyle,
                 counterStyle: AppStyle.counterTextStyle,
                 counterText: 'Counter Text',
                 isDense: true,
