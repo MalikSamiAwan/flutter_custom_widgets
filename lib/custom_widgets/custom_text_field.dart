@@ -89,6 +89,7 @@ class _CTextFieldState extends State<CTextField> {
               decoration: widget.showError?
               InputDecoration(
                 isDense: true,
+                counterStyle: AppStyle.counterTextStyle,
                 border: OutlineInputBorder(),
                 errorBorder: AppStyle.errorFieldBorder,
                 contentPadding: AppStyle.fieldContentPadding,
