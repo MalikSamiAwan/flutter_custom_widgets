@@ -205,7 +205,11 @@ class CColoredButton extends StatelessWidget {
           onTap: loading?null:onClick,
           child: Padding(
             padding: AppStyle.buttonPadding,
-            child: loading?CustomProgressIndicator():Text(
+            child: loading?SizedBox(
+              height: 15,
+              width: 20,
+              child: CustomProgressIndicator(stroke: 8,color: AppStyle.customW,),
+            ):Text(
                 title,
                 style: TextStyle(
                   color: Colors.white,
