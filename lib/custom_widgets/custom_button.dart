@@ -180,11 +180,13 @@ class CColoredButton extends StatelessWidget {
   final String title;
   final void Function()? onClick;
   Color? color;
+  final bool loading;
 
   CColoredButton({
     Key? key,
     required this.title,
     this.onClick,
+    this.loading=false,
     this.color=Colors.redAccent
   }) : super(key: key);
 
@@ -200,10 +202,10 @@ class CColoredButton extends StatelessWidget {
         color: color,
         child: InkWell(
           borderRadius: BorderRadius.circular(5),
-          onTap: onClick,
+          onTap: loading?null:onClick,
           child: Padding(
             padding: AppStyle.buttonPadding,
-            child: Text(
+            child: loading?CustomProgressIndicator():Text(
                 title,
                 style: TextStyle(
                   color: Colors.white,
