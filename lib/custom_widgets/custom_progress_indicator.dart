@@ -13,10 +13,14 @@ class CustomProgressIndicator extends StatelessWidget {
     isCupertino?CupertinoActivityIndicator(
       radius: 20,
     ):
-      CircularProgressIndicator(
-      strokeWidth: stroke??4,
-        color: color??AppStyle.customB,
-    ):
+      SizedBox(
+        height: 20,
+        width: 20,
+        child: CircularProgressIndicator(
+          strokeWidth: stroke??4,
+          color: color??AppStyle.customB,
+        ),
+      ):
         LinearProgressIndicator()
     ;
   }
