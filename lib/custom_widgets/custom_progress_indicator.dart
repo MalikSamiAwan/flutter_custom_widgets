@@ -5,7 +5,7 @@ class CustomProgressIndicator extends StatelessWidget {
   bool isCircular;
   bool isCupertino;
   Color? color;
-   CustomProgressIndicator({Key? key,this.stroke,this.isCircular=false,this.isCupertino=true,this.color}) : super(key: key);
+   CustomProgressIndicator({Key? key,this.stroke,this.isCircular=true,this.isCupertino=false,this.color}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
