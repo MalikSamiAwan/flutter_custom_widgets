@@ -1,6 +1,4 @@
-
 part of custom_widgets;
-
 
 //Three button styles used globally in app
 //1:CButton
@@ -13,6 +11,7 @@ enum CButtonType {
   primary,
   home,
 }
+
 //1:CButton
 class CButton extends StatelessWidget {
   final String title;
@@ -38,7 +37,7 @@ class CButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  CustomOnHoverMouseRegion(
+    return CustomOnHoverMouseRegion(
       customWidget: Material(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(5),
@@ -86,8 +85,8 @@ class CNewButton extends StatelessWidget {
       return AppStyle.maroon;
     } else if (type == CButtonType.text) {
       return Colors.black12.withOpacity(0.06);
-    }else if (type == CButtonType.home) {
-      if(onClick==null){
+    } else if (type == CButtonType.home) {
+      if (onClick == null) {
         return Colors.black54;
       }
       return Colors.black87;
@@ -101,7 +100,7 @@ class CNewButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomOnHoverMouseRegion(
       customWidget: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 4),
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
         child: Material(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(5),
@@ -126,7 +125,7 @@ class CNewButton extends StatelessWidget {
   _getTextColor() {
     if (type == CButtonType.primary) {
       return TextStyle(color: Colors.white);
-    }else if(type==CButtonType.home){
+    } else if (type == CButtonType.home) {
       return AppStyle.customerButtonHead;
     } else {
       return TextStyle(color: Colors.black87);
@@ -146,27 +145,26 @@ class CMenuButton extends StatelessWidget {
     Key? key,
     this.onPressed,
     required this.child,
-      this.style=null,
-    this.isSeleted=false,
+    this.style = null,
+    this.isSeleted = false,
   }) : super(key: key);
-   ButtonStyle generalStyle=ElevatedButton.styleFrom(
-     primary: AppStyle.navBarMenuButtonBg,
-     padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-   );
+  ButtonStyle generalStyle = ElevatedButton.styleFrom(
+    primary: AppStyle.navBarMenuButtonBg,
+    padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+  );
 
   @override
   Widget build(BuildContext context) {
-    if(isSeleted==true)  {
-       generalStyle=ElevatedButton.styleFrom(
-
-         textStyle: TextStyle(color: Colors.white),
+    if (isSeleted == true) {
+      generalStyle = ElevatedButton.styleFrom(
+        textStyle: TextStyle(color: Colors.white),
         primary: AppStyle.customLightAccentColorShade,
         padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
       );
     }
     return TextButton(
       onPressed: onPressed,
-      style: style??generalStyle,
+      style: style ?? generalStyle,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8),
         child: child,
@@ -181,41 +179,72 @@ class CColoredButton extends StatelessWidget {
   final void Function()? onClick;
   Color? color;
   final bool loading;
+  final bool hoverEffect;
 
-  CColoredButton({
-    Key? key,
-    required this.title,
-    this.onClick,
-    this.loading=false,
-    this.color=Colors.redAccent
-  }) : super(key: key);
-
-
+  CColoredButton(
+      {Key? key,
+      required this.title,
+      this.onClick,
+      this.loading = false,
+      this.hoverEffect = false,
+      this.color = Colors.redAccent})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return  CustomOnHoverMouseRegion(
-      customWidget: Material(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(5),
-        ),
-        color: color,
-        child: InkWell(
-          borderRadius: BorderRadius.circular(5),
-          onTap: loading?null:onClick,
-          child: Padding(
-            padding: AppStyle.buttonPadding,
-            child: loading?SizedBox(
-              height: 15,
-              width: 20,
-              child: CustomProgressIndicator(stroke: 8,color: AppStyle.customW,),
-            ):Text(
-                title,
-                style: TextStyle(
-                  color: Colors.white,
-                )
+    if (hoverEffect) {
+      return CustomOnHoverMouseRegion(
+        customWidget: Material(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(5),
+          ),
+          color: color,
+          child: InkWell(
+            borderRadius: BorderRadius.circular(5),
+            onTap: loading ? null : onClick,
+            child: Padding(
+              padding: AppStyle.buttonPadding,
+              child: loading
+                  ? SizedBox(
+                      height: 15,
+                      width: 20,
+                      child: CustomProgressIndicator(
+                        stroke: 8,
+                        color: AppStyle.customW,
+                      ),
+                    )
+                  : Text(title,
+                      style: TextStyle(
+                        color: Colors.white,
+                      )),
             ),
           ),
+        ),
+      );
+    }
+    return Material(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(5),
+      ),
+      color: color,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(5),
+        onTap: loading ? null : onClick,
+        child: Padding(
+          padding: AppStyle.buttonPadding,
+          child: loading
+              ? SizedBox(
+                  height: 15,
+                  width: 20,
+                  child: CustomProgressIndicator(
+                    stroke: 8,
+                    color: AppStyle.customW,
+                  ),
+                )
+              : Text(title,
+                  style: TextStyle(
+                    color: Colors.white,
+                  )),
         ),
       ),
     );
