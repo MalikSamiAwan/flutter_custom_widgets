@@ -13,9 +13,9 @@ dependencies:
     sdk: flutter
 
   #Used only for styling fonts
-  google_fonts: ^2.1.0
+#  google_fonts: ^2.1.0
   #Used for creating multi-select widgets in a variety of ways.
-  multi_select_flutter: ^4.0.0
+  multi_select_flutter: ^4.1.2
   #Used only for showing notifications
   overlay_support: ^1.2.1
   # Used only to change numbers rapidly
