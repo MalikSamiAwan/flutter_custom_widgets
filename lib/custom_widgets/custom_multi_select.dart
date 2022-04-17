@@ -13,7 +13,8 @@ class CustomMultiSelect extends StatelessWidget {
   MultiSelectListType? listType;
   bool? searchable;
   String? Function (List<dynamic>? data )? validator;
-  CustomMultiSelect({Key? key,required this.title,required this.buttonText,this.buttonTextStyle,required this.items,required this.selected,this.onSelectionChanged,this.chipDisplay,this.listType,this.searchable,this.onConfirm,this.validator}) : super(key: key);
+  Icon? icon;
+  CustomMultiSelect({Key? key,required this.title,required this.buttonText,this.buttonTextStyle,required this.items,required this.selected,this.onSelectionChanged,this.chipDisplay,this.listType,this.searchable,this.onConfirm,this.validator,this.icon}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,7 @@ class CustomMultiSelect extends StatelessWidget {
       onConfirm: onConfirm??(values) {},
       onSelectionChanged: onSelectionChanged,
       chipDisplay: chipDisplay??MultiSelectChipDisplay.none(),
-      buttonIcon: Icon(Icons.arrow_drop_down_outlined),
+      buttonIcon: icon??Icon(Icons.arrow_drop_down_outlined),
       decoration: BoxDecoration(
         color: AppStyle.customW,
         border: Border.all(
