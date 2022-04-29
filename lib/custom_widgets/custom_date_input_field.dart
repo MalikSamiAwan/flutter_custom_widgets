@@ -47,7 +47,7 @@ class CDateField extends StatelessWidget {
               onTap: () async {
                 var p = await showDatePicker(
                   context: context,
-                  initialDate: DateTime.now(),
+                  initialDate:firstDate!=null?firstDate!.add(Duration(days: 1)): DateTime.now(),
                   firstDate: firstDate??DateTime.parse("2000-01-01 00:00:00"),//DateTime.now(),
                   lastDate: DateTime.now().add(
                     Duration(
