@@ -20,6 +20,7 @@ class CustomMultiSelect extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return MultiSelectDialogField(
+
       validator: validator,
       listType: listType??MultiSelectListType.CHIP,
       searchable: searchable??true,

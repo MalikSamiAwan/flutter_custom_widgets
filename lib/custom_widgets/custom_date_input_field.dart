@@ -11,10 +11,12 @@ class CDateField extends StatelessWidget {
   final bool autoFocus;
   final double order;
   Key? testingKey;
+  final DateTime? firstDate;
 
   CDateField({Key? key,testingKey, required this.title, this.onChanged, this.value,this.validator,
     this.autoFocus=false,
     this.order=0,
+    this.firstDate
     })
       : super(key: key);
 
@@ -46,7 +48,7 @@ class CDateField extends StatelessWidget {
                 var p = await showDatePicker(
                   context: context,
                   initialDate: DateTime.now(),
-                  firstDate: DateTime.parse("2000-01-01 00:00:00"),//DateTime.now(),
+                  firstDate: firstDate??DateTime.parse("2000-01-01 00:00:00"),//DateTime.now(),
                   lastDate: DateTime.now().add(
                     Duration(
                       days: 500,
