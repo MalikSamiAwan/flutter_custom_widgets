@@ -128,7 +128,7 @@ class ColoredCTextField extends StatefulWidget {
   bool hasTitle;
   bool obscureText;
   bool showError;
-  Color? color;
+  Color? borderColor;
   ColoredCTextField({
     Key? key,
     required this.title,
@@ -146,7 +146,7 @@ class ColoredCTextField extends StatefulWidget {
     this.hasTitle=true,
     this.obscureText=false,
     this.showError=false,
-    this.color,
+    this.borderColor,
   }) : super(key: key);
 
   @override
@@ -207,9 +207,9 @@ class _ColoredCTextFieldState extends State<ColoredCTextField> {
                 errorBorder: AppStyle.errorFieldBorder,
                 contentPadding: AppStyle.fieldContentPadding,
 
-                enabledBorder: widget.color!=null?OutlineInputBorder(
+                enabledBorder: widget.borderColor!=null?OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: widget.color??Colors.grey,
+                    color: widget.borderColor??Colors.grey,
                   ),
                 ):OutlineInputBorder(),
               ):
@@ -222,9 +222,9 @@ class _ColoredCTextFieldState extends State<ColoredCTextField> {
 
                 errorBorder: AppStyle.errorFieldBorder,
                 contentPadding: AppStyle.fieldContentPadding,
-                enabledBorder: widget.color!=null?OutlineInputBorder(
+                enabledBorder: widget.borderColor!=null?OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: widget.color??Colors.grey,
+                    color: widget.borderColor??Colors.grey,
                   ),
                 ):OutlineInputBorder(),
               ),
