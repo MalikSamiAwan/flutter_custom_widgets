@@ -211,7 +211,7 @@ class _ColoredCTextFieldState extends State<ColoredCTextField> {
 
                 enabledBorder: widget.borderColor!=null?OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: widget.borderColor??Colors.grey,
+                      color: widget.borderColor??Colors.grey, width: 1.5
                   ),
                 ):OutlineInputBorder(),
               ):
@@ -226,7 +226,7 @@ class _ColoredCTextFieldState extends State<ColoredCTextField> {
                 contentPadding: AppStyle.fieldContentPadding,
                 enabledBorder: widget.borderColor!=null?OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: widget.borderColor??Colors.grey,
+                    color: widget.borderColor??Colors.grey, width: 1.5
                   ),
                 ):OutlineInputBorder(),
               ),
