@@ -129,6 +129,7 @@ class ColoredCTextField extends StatefulWidget {
   bool obscureText;
   bool showError;
   Color? borderColor;
+  final bool addValidator;
   ColoredCTextField({
     Key? key,
     required this.title,
@@ -147,6 +148,7 @@ class ColoredCTextField extends StatefulWidget {
     this.obscureText=false,
     this.showError=false,
     this.borderColor,
+    this.addValidator=true,
   }) : super(key: key);
 
   @override
@@ -191,7 +193,7 @@ class _ColoredCTextFieldState extends State<ColoredCTextField> {
               readOnly: widget.readOnly??false,
               controller: controller,
               autofocus: widget.autoFocus,
-              validator: widget.validator,
+              validator: widget.addValidator?widget.validator:null,
               // initialValue: initialValue!,
               expands: widget.expands,
               autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -207,11 +209,11 @@ class _ColoredCTextFieldState extends State<ColoredCTextField> {
                 errorBorder: AppStyle.errorFieldBorder,
                 contentPadding: AppStyle.fieldContentPadding,
 
-                enabledBorder: widget.borderColor!=null?OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: widget.borderColor??Colors.grey,
-                  ),
-                ):OutlineInputBorder(),
+                // enabledBorder: widget.borderColor!=null?OutlineInputBorder(
+                //   borderSide: BorderSide(
+                //     color: widget.borderColor??Colors.grey,
+                //   ),
+                // ):OutlineInputBorder(),
               ):
               InputDecoration(
                 errorStyle:  AppStyle.errorTextStyle,
@@ -220,13 +222,13 @@ class _ColoredCTextFieldState extends State<ColoredCTextField> {
                 isDense: true,
                 border: OutlineInputBorder(),
 
-                errorBorder: AppStyle.errorFieldBorder,
-                contentPadding: AppStyle.fieldContentPadding,
-                enabledBorder: widget.borderColor!=null?OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: widget.borderColor??Colors.grey,
-                  ),
-                ):OutlineInputBorder(),
+                // errorBorder: AppStyle.errorFieldBorder,
+                // contentPadding: AppStyle.fieldContentPadding,
+                // enabledBorder: widget.borderColor!=null?OutlineInputBorder(
+                //   borderSide: BorderSide(
+                //     color: widget.borderColor??Colors.grey,
+                //   ),
+                // ):OutlineInputBorder(),
               ),
             ),
           )
