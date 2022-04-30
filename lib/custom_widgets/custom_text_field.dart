@@ -209,11 +209,11 @@ class _ColoredCTextFieldState extends State<ColoredCTextField> {
                 errorBorder: AppStyle.errorFieldBorder,
                 contentPadding: AppStyle.fieldContentPadding,
 
-                // enabledBorder: widget.borderColor!=null?OutlineInputBorder(
-                //   borderSide: BorderSide(
-                //     color: widget.borderColor??Colors.grey,
-                //   ),
-                // ):OutlineInputBorder(),
+                enabledBorder: widget.borderColor!=null?OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: widget.borderColor??Colors.grey,
+                  ),
+                ):OutlineInputBorder(),
               ):
               InputDecoration(
                 errorStyle:  AppStyle.errorTextStyle,
@@ -222,13 +222,13 @@ class _ColoredCTextFieldState extends State<ColoredCTextField> {
                 isDense: true,
                 border: OutlineInputBorder(),
 
-                // errorBorder: AppStyle.errorFieldBorder,
-                // contentPadding: AppStyle.fieldContentPadding,
-                // enabledBorder: widget.borderColor!=null?OutlineInputBorder(
-                //   borderSide: BorderSide(
-                //     color: widget.borderColor??Colors.grey,
-                //   ),
-                // ):OutlineInputBorder(),
+                errorBorder: AppStyle.errorFieldBorder,
+                contentPadding: AppStyle.fieldContentPadding,
+                enabledBorder: widget.borderColor!=null?OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: widget.borderColor??Colors.grey,
+                  ),
+                ):OutlineInputBorder(),
               ),
             ),
           )
