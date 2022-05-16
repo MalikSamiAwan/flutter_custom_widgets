@@ -19,6 +19,7 @@ class CTextField extends StatefulWidget {
   bool showError;
   Color? borderColor;
   bool isInputDecimel;
+  TextStyle inputTextStyle;
   CTextField({
     Key? key,
     required this.title,
@@ -38,6 +39,7 @@ class CTextField extends StatefulWidget {
     this.showError=false,
     this.borderColor,
     this.isInputDecimel=false,
+    this.inputTextStyle=const TextStyle(),
   }) : super(key: key);
 
   @override
@@ -78,6 +80,7 @@ class _CTextFieldState extends State<CTextField> {
             FocusTraversalOrder(
               order: NumericFocusOrder(widget.order),
               child: TextFormField(
+                style: widget.inputTextStyle,
                 obscureText: widget.obscureText,
                 onFieldSubmitted: widget.onFieldSubmitted,
                 readOnly: widget.readOnly??false,
@@ -125,6 +128,7 @@ class _CTextFieldState extends State<CTextField> {
             FocusTraversalOrder(
               order: NumericFocusOrder(widget.order),
               child: TextFormField(
+                style: widget.inputTextStyle,
                 obscureText: widget.obscureText,
                 onFieldSubmitted: widget.onFieldSubmitted,
                 readOnly: widget.readOnly??false,
@@ -161,6 +165,7 @@ class _CTextFieldState extends State<CTextField> {
             FocusTraversalOrder(
               order: NumericFocusOrder(widget.order),
               child: TextFormField(
+                style: widget.inputTextStyle,
                 obscureText: widget.obscureText,
                 onFieldSubmitted: widget.onFieldSubmitted,
                 readOnly: widget.readOnly??false,
