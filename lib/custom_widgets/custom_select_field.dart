@@ -42,43 +42,46 @@ class CSelectField<T> extends StatelessWidget {
               style: AppStyle.fieldTitleTextStyle,
             ),
           ),
-          FocusTraversalOrder(
-            order: NumericFocusOrder(order),
-            child: DropdownButtonFormField(
-                autofocus: autoFocus,
-                validator: validator,
-                onChanged: (T? x) {
-                  if (onChanged != null) {
-                    onChanged!(x);
-                  }
-                  // UIHelper.looseFocus();
-                },
-                value: value,
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  errorStyle: AppStyle.errorTextStyle,
-                  counterStyle: AppStyle.counterTextStyle,
-                  counterText: 'Counter Text',
-                  errorBorder: AppStyle.errorFieldBorder,
-                  isDense: true,
-                  // contentPadding: EdgeInsets.zero,
-                  contentPadding: AppStyle.fieldContentPadding,
-                ),
-                items: options
-                    .map(
-                      (e) =>
-                      DropdownMenuItem(
-                        child: builder != null
-                            ? builder!(e)
-                            : Text(
-                          e.toString(),
+          Tooltip(
+            message: 'Click to Select',
+            child: FocusTraversalOrder(
+              order: NumericFocusOrder(order),
+              child: DropdownButtonFormField(
+                  autofocus: autoFocus,
+                  validator: validator,
+                  onChanged: (T? x) {
+                    if (onChanged != null) {
+                      onChanged!(x);
+                    }
+                    // UIHelper.looseFocus();
+                  },
+                  value: value,
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    errorStyle: AppStyle.errorTextStyle,
+                    counterStyle: AppStyle.counterTextStyle,
+                    counterText: 'Counter Text',
+                    errorBorder: AppStyle.errorFieldBorder,
+                    isDense: true,
+                    // contentPadding: EdgeInsets.zero,
+                    contentPadding: AppStyle.fieldContentPadding,
+                  ),
+                  items: options
+                      .map(
+                        (e) =>
+                        DropdownMenuItem(
+                          child: builder != null
+                              ? builder!(e)
+                              : Text(
+                            e.toString(),
+                          ),
+                          value: e,
                         ),
-                        value: e,
-                      ),
-                )
-                    .toList()),
-          ),
+                  )
+                      .toList()),
+            ),
+          )
         ],
       ),
     );
@@ -130,43 +133,46 @@ class CSelectFieldNew<T> extends StatelessWidget {
               ),
             ),
           ],
-          FocusTraversalOrder(
-            order: NumericFocusOrder(order),
-            child: DropdownButtonFormField(
-              isExpanded: true,
-                autofocus: autoFocus,
-                validator: validator,
-                onChanged: (T? x) {
-                  if (onChanged != null) {
-                    onChanged!(x);
-                  }
-                  // UIHelper.looseFocus();
-                },
-                value: value,
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  errorStyle: AppStyle.errorTextStyle,
-                  counterStyle: AppStyle.counterTextStyle,
-                  counterText: 'Counter Text',
-                  errorBorder: AppStyle.errorFieldBorder,
-                  isDense: true,
-                  // contentPadding: EdgeInsets.zero,
-                  contentPadding: AppStyle.fieldContentPadding,
-                ),
-                items: options
-                    .map(
-                      (e) => DropdownMenuItem(
-                    child: builder != null
-                        ? builder!(e)
-                        : Text(
-                      e.toString(),
-                    ),
-                    value: e,
+          Tooltip(
+            message: 'Click to Select',
+            child: FocusTraversalOrder(
+              order: NumericFocusOrder(order),
+              child: DropdownButtonFormField(
+                  isExpanded: true,
+                  autofocus: autoFocus,
+                  validator: validator,
+                  onChanged: (T? x) {
+                    if (onChanged != null) {
+                      onChanged!(x);
+                    }
+                    // UIHelper.looseFocus();
+                  },
+                  value: value,
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    errorStyle: AppStyle.errorTextStyle,
+                    counterStyle: AppStyle.counterTextStyle,
+                    counterText: 'Counter Text',
+                    errorBorder: AppStyle.errorFieldBorder,
+                    isDense: true,
+                    // contentPadding: EdgeInsets.zero,
+                    contentPadding: AppStyle.fieldContentPadding,
                   ),
-                )
-                    .toList()),
-          ),
+                  items: options
+                      .map(
+                        (e) => DropdownMenuItem(
+                      child: builder != null
+                          ? builder!(e)
+                          : Text(
+                        e.toString(),
+                      ),
+                      value: e,
+                    ),
+                  )
+                      .toList()),
+            ),
+          )
         ],
       ),
     );

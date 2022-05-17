@@ -19,26 +19,29 @@ class CustomMultiSelect extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return MultiSelectDialogField(
+    return Tooltip(
+      message:"Click to Multi-Select",
+      child:MultiSelectDialogField(
 
-      validator: validator,
-      listType: listType??MultiSelectListType.CHIP,
-      searchable: searchable??true,
-      buttonText: Text(buttonText,style: buttonTextStyle,),
-      title: Text(title,),
-      items: items.cast(),
-      initialValue: selected,
-      onConfirm: onConfirm??(values) {},
-      onSelectionChanged: onSelectionChanged,
-      chipDisplay: chipDisplay??MultiSelectChipDisplay.none(),
-      buttonIcon: icon??Icon(Icons.arrow_drop_down_outlined),
-      decoration: BoxDecoration(
-        color: AppStyle.customW,
-        border: Border.all(
-          color: Colors.grey,
-          width: 0.25,
+        validator: validator,
+        listType: listType??MultiSelectListType.CHIP,
+        searchable: searchable??true,
+        buttonText: Text(buttonText,style: buttonTextStyle,),
+        title: Text(title,),
+        items: items.cast(),
+        initialValue: selected,
+        onConfirm: onConfirm??(values) {},
+        onSelectionChanged: onSelectionChanged,
+        chipDisplay: chipDisplay??MultiSelectChipDisplay.none(),
+        buttonIcon: icon??Icon(Icons.arrow_drop_down_outlined),
+        decoration: BoxDecoration(
+          color: AppStyle.customW,
+          border: Border.all(
+            color: Colors.grey,
+            width: 0.25,
+          ),
         ),
-      ),
+      )
     );
   }
 }
