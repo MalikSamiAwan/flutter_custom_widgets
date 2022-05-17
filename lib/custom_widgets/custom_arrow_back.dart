@@ -7,11 +7,14 @@ class CustomBackArrow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-      icon: Icon(Icons.arrow_back_ios),
-      onPressed: onPressed??() {
-        Navigator.of(context).pop();
-      },
+    return Tooltip(
+      message: "Go Back",
+      child: IconButton(
+        icon: Icon(Icons.arrow_back_ios),
+        onPressed: onPressed??() {
+          Navigator.of(context).pop();
+        },
+      )
     );
   }
 }
