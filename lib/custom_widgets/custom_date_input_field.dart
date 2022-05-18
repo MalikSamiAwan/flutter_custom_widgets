@@ -57,11 +57,11 @@ class CDateField extends StatelessWidget {
                   counterStyle: AppStyle.counterTextStyle,
                   counterText: 'Counter Text',
                   contentPadding: EdgeInsets.zero,
-                  prefixIcon: Icon(
-                    Icons.calendar_today_outlined,
-                    color: Colors.transparent,
-                    size: 15,
-                  ),
+                  // prefixIcon: Icon(
+                  //   Icons.calendar_today_outlined,
+                  //   color: Colors.transparent,
+                  //   size: 15,
+                  // ),
                   isDense: true,
                 ),
               ),
