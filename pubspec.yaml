@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  #Used only for styling fonts
+  #Usemulti_select_flutterd only for styling fonts
 #  google_fonts: ^2.1.0
   #Used for creating multi-select widgets in a variety of ways.
   multi_select_flutter: ^4.1.2
@@ -20,6 +20,9 @@ dependencies:
   overlay_support: ^1.2.1
   # Used only to change numbers rapidly
   holding_gesture: ^1.1.0
+
+  #date and other things
+  intl: ^0.17.0
 
   #Customizable Icons for Flutter
   flutter_icons:

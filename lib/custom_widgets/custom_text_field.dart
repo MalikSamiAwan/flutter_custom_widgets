@@ -80,6 +80,7 @@ class _CTextFieldState extends State<CTextField> {
             FocusTraversalOrder(
               order: NumericFocusOrder(widget.order),
               child: TextFormField(
+                keyboardType: TextInputType.number,
                 style: widget.inputTextStyle,
                 obscureText: widget.obscureText,
                 onFieldSubmitted: widget.onFieldSubmitted,
@@ -94,7 +95,9 @@ class _CTextFieldState extends State<CTextField> {
                 maxLines: widget.expands ? null : widget.minLines,
                 minLines: widget.expands ? null : widget.minLines,
                 inputFormatters: [
+
                   FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),
+                  CurrencyInputFormatter(),
                   TextInputFormatter.withFunction((oldValue, newValue) {
                     try {
                       final text = newValue.text;
