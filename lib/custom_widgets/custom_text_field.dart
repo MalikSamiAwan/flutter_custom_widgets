@@ -18,7 +18,7 @@ class CTextField extends StatefulWidget {
   bool obscureText;
   bool showError;
   Color? borderColor;
-  bool isInputDecimel;
+  bool isMoneyInput;
   TextStyle inputTextStyle;
   CTextField({
     Key? key,
@@ -38,7 +38,7 @@ class CTextField extends StatefulWidget {
     this.obscureText=false,
     this.showError=false,
     this.borderColor,
-    this.isInputDecimel=false,
+    this.isMoneyInput=false,
     this.inputTextStyle=const TextStyle(),
   }) : super(key: key);
 
@@ -77,10 +77,11 @@ class _CTextFieldState extends State<CTextField> {
             ),
           ],
 
-          if(widget.isInputDecimel)...[
+          if(widget.isMoneyInput)...[
             FocusTraversalOrder(
               order: NumericFocusOrder(widget.order),
               child: TextFormField(
+                initialValue: toCurrencyString('${controller.text}', leadingSymbol: '\$'),
                 keyboardType: TextInputType.number,
                 style: widget.inputTextStyle,
                 obscureText: widget.obscureText,
