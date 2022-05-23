@@ -98,7 +98,6 @@ class _CTextFieldState extends State<CTextField> {
                 inputFormatters: [
                   MoneyInputFormatter(
                     // trailingSymbol: MoneySymbols.DOLLAR_SIGN,
-                    thousandSeparator: ThousandSeparator.Period,
                       leadingSymbol: MoneySymbols.DOLLAR_SIGN,
                   ),
                   // FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),
