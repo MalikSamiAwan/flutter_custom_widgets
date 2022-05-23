@@ -12,8 +12,7 @@ import 'package:overlay_support/overlay_support.dart';
 import 'package:holding_gesture/holding_gesture.dart';
 import 'package:fl_chart/fl_chart.dart';
 
-import 'package:flutter/services.dart';
-import 'package:intl/intl.dart';
+import 'package:currency_text_input_formatter/currency_text_input_formatter.dart';
 
 import './custom_widgets/app_style.dart';
 import './custom_widgets/helper.dart';
@@ -48,6 +47,6 @@ part './custom_widgets/custom_expandable_widget.dart';
 part './dashboard/mini_information_widget.dart';
 
 
-part './helper/inputFormatter.dart';
+
 
 

@@ -95,7 +95,7 @@ class _CTextFieldState extends State<CTextField> {
                 maxLines: widget.expands ? null : widget.minLines,
                 minLines: widget.expands ? null : widget.minLines,
                 inputFormatters: [
-                  CurrencyInputFormatter(),
+                  CurrencyTextInputFormatter(),
                   FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),
                   //
                   // TextInputFormatter.withFunction((oldValue, newValue) {
