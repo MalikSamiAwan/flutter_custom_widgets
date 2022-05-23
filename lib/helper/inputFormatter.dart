@@ -13,7 +13,7 @@ class CurrencyInputFormatter extends TextInputFormatter {
 
     double value = double.parse(newValue.text);
 
-    final formatter = NumberFormat.simpleCurrency(locale: "en_US",);
+    final formatter = NumberFormat.simpleCurrency(locale: "pt_Br",);
 
     String newText = formatter.format(value/100);
 
