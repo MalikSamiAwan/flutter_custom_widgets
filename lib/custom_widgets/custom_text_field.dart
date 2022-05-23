@@ -49,6 +49,19 @@ class CTextField extends StatefulWidget {
 class _CTextFieldState extends State<CTextField> {
   final controller = TextEditingController();
   @override
+  void initState() {
+    if(widget.value==''||widget.value==null||widget.value!.isEmpty||widget.value=="null"){
+      controller.text = "";
+    }else{
+      controller.text = widget.value!;
+      if(widget.isMoneyInput){
+        controller.text = toCurrencyString('${controller.text}', leadingSymbol: '\$');
+      }
+    }
+
+    super.initState();
+  }
+  @override
   void dispose() {
     controller.dispose();
     super.dispose();
@@ -56,11 +69,7 @@ class _CTextFieldState extends State<CTextField> {
 
   @override
   Widget build(BuildContext context) {
-    if(widget.value==null||widget.value!.isEmpty||widget.value=="null"){
-      controller.text = "";
-    }else{
-      controller.text = widget.value!;
-    }
+
 
     return Container(
       padding: AppStyle.fieldPaddingGlobal,
@@ -81,7 +90,7 @@ class _CTextFieldState extends State<CTextField> {
             FocusTraversalOrder(
               order: NumericFocusOrder(widget.order),
               child: TextFormField(
-                initialValue: toCurrencyString('${controller.text}', leadingSymbol: '\$'),
+                // initialValue: toCurrencyString('${controller.text}', leadingSymbol: '\$'),
                 keyboardType: TextInputType.number,
                 style: widget.inputTextStyle,
                 obscureText: widget.obscureText,
