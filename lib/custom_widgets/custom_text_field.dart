@@ -97,9 +97,11 @@ class _CTextFieldState extends State<CTextField> {
                 minLines: widget.expands ? null : widget.minLines,
                 inputFormatters: [
                   MoneyInputFormatter(
-                      leadingSymbol: MoneySymbols.DOLLAR_SIGN
+                    // trailingSymbol: MoneySymbols.DOLLAR_SIGN,
+                    thousandSeparator: ThousandSeparator.Period,
+                      leadingSymbol: MoneySymbols.DOLLAR_SIGN,
                   ),
-                  FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),
+                  // FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),
                   //
                   // TextInputFormatter.withFunction((oldValue, newValue) {
                   //   try {
