@@ -12,8 +12,7 @@ import 'package:overlay_support/overlay_support.dart';
 import 'package:holding_gesture/holding_gesture.dart';
 import 'package:fl_chart/fl_chart.dart';
 
-import 'package:flutter_masked_text2/flutter_masked_text2.dart';
-
+import 'package:flutter_multi_formatter/flutter_multi_formatter.dart';
 
 import './custom_widgets/app_style.dart';
 import './custom_widgets/helper.dart';

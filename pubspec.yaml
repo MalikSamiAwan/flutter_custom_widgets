@@ -21,8 +21,8 @@ dependencies:
   # Used only to change numbers rapidly
   holding_gesture: ^1.1.0
 
-  #currency Text Input Formatter for Flutter
-  flutter_masked_text2: ^0.9.1
+  #formatting input
+  flutter_multi_formatter: ^2.5.7
 
   #Customizable Icons for Flutter
   flutter_icons:

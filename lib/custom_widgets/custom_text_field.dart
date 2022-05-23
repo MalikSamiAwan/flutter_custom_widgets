@@ -47,16 +47,7 @@ class CTextField extends StatefulWidget {
 }
 
 class _CTextFieldState extends State<CTextField> {
-  late var controller;
-  @override
-  void initState() {
-    if(widget.isInputDecimel){
-       controller = new MoneyMaskedTextController(decimalSeparator: '.', thousandSeparator: ',',rightSymbol: ' US\$');
-    }else{
-      controller =TextEditingController();
-    }
-    super.initState();
-  }
+  final controller = TextEditingController();
   @override
   void dispose() {
     controller.dispose();
@@ -105,17 +96,19 @@ class _CTextFieldState extends State<CTextField> {
                 maxLines: widget.expands ? null : widget.minLines,
                 minLines: widget.expands ? null : widget.minLines,
                 inputFormatters: [
-
+                  MoneyInputFormatter(
+                      leadingSymbol: MoneySymbols.DOLLAR_SIGN
+                  ),
                   FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),
-
-                  TextInputFormatter.withFunction((oldValue, newValue) {
-                    try {
-                      final text = newValue.text;
-                      if (text.isNotEmpty) double.parse(text);
-                      return newValue;
-                    } catch (e) {}
-                    return oldValue;
-                  }),
+                  //
+                  // TextInputFormatter.withFunction((oldValue, newValue) {
+                  //   try {
+                  //     final text = newValue.text;
+                  //     if (text.isNotEmpty) double.parse(text);
+                  //     return newValue;
+                  //   } catch (e) {}
+                  //   return oldValue;
+                  // }),
                 ],
                 decoration:
                 widget.showError?
