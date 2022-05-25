@@ -92,7 +92,6 @@ class _CTextFieldState extends State<CTextField> {
             FocusTraversalOrder(
               order: NumericFocusOrder(widget.order),
               child: TextFormField(
-                // initialValue: toCurrencyString('${controller.text}', leadingSymbol: '\$'),
                 keyboardType: TextInputType.phone,
                 style: widget.inputTextStyle,
                 obscureText: widget.obscureText,
@@ -101,14 +100,13 @@ class _CTextFieldState extends State<CTextField> {
                 controller: controller,
                 autofocus: widget.autoFocus,
                 validator: widget.validator,
-                // initialValue: initialValue!,
                 expands: widget.expands,
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 onChanged: widget.onChanged,
                 maxLines: widget.expands ? null : widget.minLines,
                 minLines: widget.expands ? null : widget.minLines,
                 inputFormatters: [
-                  PhoneInputFormatter()
+                  PhoneInputFormatter(allowEndlessPhone: true)
                 ],
                 decoration:
                 widget.showError?
