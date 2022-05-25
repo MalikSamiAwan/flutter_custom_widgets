@@ -19,6 +19,7 @@ class CTextField extends StatefulWidget {
   bool showError;
   Color? borderColor;
   bool isMoneyInput;
+  bool isContactInput;
   TextStyle inputTextStyle;
   CTextField({
     Key? key,
@@ -39,6 +40,7 @@ class CTextField extends StatefulWidget {
     this.showError=false,
     this.borderColor,
     this.isMoneyInput=false,
+    this.isContactInput=false,
     this.inputTextStyle=const TextStyle(),
   }) : super(key: key);
 
@@ -86,7 +88,50 @@ class _CTextFieldState extends State<CTextField> {
             ),
           ],
 
-          if(widget.isMoneyInput)...[
+          if(widget.isContactInput)...[
+            FocusTraversalOrder(
+              order: NumericFocusOrder(widget.order),
+              child: TextFormField(
+                // initialValue: toCurrencyString('${controller.text}', leadingSymbol: '\$'),
+                keyboardType: TextInputType.phone,
+                style: widget.inputTextStyle,
+                obscureText: widget.obscureText,
+                onFieldSubmitted: widget.onFieldSubmitted,
+                readOnly: widget.readOnly??false,
+                controller: controller,
+                autofocus: widget.autoFocus,
+                validator: widget.validator,
+                // initialValue: initialValue!,
+                expands: widget.expands,
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                onChanged: widget.onChanged,
+                maxLines: widget.expands ? null : widget.minLines,
+                minLines: widget.expands ? null : widget.minLines,
+                inputFormatters: [
+                  PhoneInputFormatter()
+                ],
+                decoration:
+                widget.showError?
+                InputDecoration(
+                  isDense: true,
+                  counterStyle: AppStyle.counterTextStyle,
+                  border: OutlineInputBorder(),
+                  errorBorder: AppStyle.errorFieldBorder,
+                  contentPadding: AppStyle.fieldContentPadding,
+                ):
+                InputDecoration(
+                  errorStyle:  AppStyle.errorTextStyle,
+                  counterStyle: AppStyle.counterTextStyle,
+                  counterText: 'Counter Text',
+                  isDense: true,
+                  border: OutlineInputBorder(),
+                  errorBorder: AppStyle.errorFieldBorder,
+                  contentPadding: AppStyle.fieldContentPadding,
+                ),
+              ),
+            )
+          ]
+          else if(widget.isMoneyInput)...[
             FocusTraversalOrder(
               order: NumericFocusOrder(widget.order),
               child: TextFormField(
