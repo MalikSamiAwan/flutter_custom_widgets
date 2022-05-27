@@ -19,7 +19,7 @@ class CDateField extends StatelessWidget {
     this.order=0,
     this.firstDate,
     this.justSameFormattingRequired=false,
-    })
+  })
       : super(key: key);
 
   final controller = TextEditingController();
@@ -56,12 +56,12 @@ class CDateField extends StatelessWidget {
                   errorStyle: AppStyle.errorTextStyle,
                   counterStyle: AppStyle.counterTextStyle,
                   counterText: 'Counter Text',
-                  contentPadding: EdgeInsets.zero,
-                  // prefixIcon: Icon(
-                  //   Icons.calendar_today_outlined,
-                  //   color: Colors.transparent,
-                  //   size: 15,
-                  // ),
+                  // contentPadding: EdgeInsets.zero,
+                  prefixIcon: Icon(
+                    Icons.calendar_today_outlined,
+                    color: Colors.transparent,
+                    size: 15,
+                  ),
                   isDense: true,
                 ),
               ),
