@@ -145,17 +145,19 @@ class LineChartWidget extends StatelessWidget {
             LineChartData(
                 lineBarsData: [
                   LineChartBarData(
+
                       spots: spotsData,
                       belowBarData: BarAreaData(show: false),
                       aboveBarData: BarAreaData(show: false),
                       isCurved: true,
                       dotData: FlDotData(show: false),
-                      colors: colors,
+                      // color: colors,
                       barWidth: 3),
                 ],
                 lineTouchData: LineTouchData(enabled: false),
                 titlesData: FlTitlesData(show: false),
-                axisTitleData: FlAxisTitleData(show: false),
+
+                // axisTitleData: FlAxisTitleData(show: false),
                 gridData: FlGridData(show: false),
                 borderData: FlBorderData(show: false)),
           ),
