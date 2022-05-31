@@ -17,7 +17,7 @@ dependencies:
   #Used for creating multi-select widgets in a variety of ways.
   multi_select_flutter: ^4.1.2
   #Used only for showing notifications
-  overlay_support: ^1.2.1
+  overlay_support: 2.0.0
   # Used only to change numbers rapidly
   holding_gesture: ^1.1.0
 
