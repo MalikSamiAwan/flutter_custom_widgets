@@ -32,7 +32,7 @@ dependencies:
   #A library to draw fantastic charts in Flutter
   fl_chart: ^0.51.0
   #Draw SVG files on a Flutter Widget.
-  flutter_svg: ^0.22.0
+  flutter_svg: ^1.1.0
 
 dev_dependencies:
   flutter_test:
