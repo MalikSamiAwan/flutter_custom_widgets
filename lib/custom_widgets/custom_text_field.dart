@@ -111,6 +111,8 @@ class _CTextFieldState extends State<CTextField> {
                 decoration:
                 widget.showError?
                 InputDecoration(
+                  filled: widget.readOnly??false,
+                  fillColor: widget.readOnly??false?Colors.grey.shade300:Colors.white,
                   isDense: true,
                   counterStyle: AppStyle.counterTextStyle,
                   border: OutlineInputBorder(),
@@ -118,6 +120,8 @@ class _CTextFieldState extends State<CTextField> {
                   contentPadding: AppStyle.fieldContentPadding,
                 ):
                 InputDecoration(
+                  filled: widget.readOnly??false,
+                  fillColor: widget.readOnly??false?Colors.grey.shade300:Colors.white,
                   errorStyle:  AppStyle.errorTextStyle,
                   counterStyle: AppStyle.counterTextStyle,
                   counterText: 'Counter Text',
@@ -151,7 +155,7 @@ class _CTextFieldState extends State<CTextField> {
                 inputFormatters: [
                   MoneyInputFormatter(
                     // trailingSymbol: MoneySymbols.DOLLAR_SIGN,
-                      leadingSymbol: MoneySymbols.DOLLAR_SIGN,
+                    leadingSymbol: MoneySymbols.DOLLAR_SIGN,
                   ),
                   // FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),
                   //
@@ -167,6 +171,8 @@ class _CTextFieldState extends State<CTextField> {
                 decoration:
                 widget.showError?
                 InputDecoration(
+                  filled: widget.readOnly??false,
+                  fillColor: widget.readOnly??false?Colors.grey.shade300:Colors.white,
                   isDense: true,
                   counterStyle: AppStyle.counterTextStyle,
                   border: OutlineInputBorder(),
@@ -174,6 +180,8 @@ class _CTextFieldState extends State<CTextField> {
                   contentPadding: AppStyle.fieldContentPadding,
                 ):
                 InputDecoration(
+                  filled: widget.readOnly??false,
+                  fillColor: widget.readOnly??false?Colors.grey.shade300:Colors.white,
                   errorStyle:  AppStyle.errorTextStyle,
                   counterStyle: AppStyle.counterTextStyle,
                   counterText: 'Counter Text',
@@ -204,6 +212,8 @@ class _CTextFieldState extends State<CTextField> {
                 inputFormatters: [if (widget.numbersOnly) FilteringTextInputFormatter.digitsOnly],
                 decoration: widget.showError?
                 InputDecoration(
+                  filled: widget.readOnly??false,
+                  fillColor: widget.readOnly??false?Colors.grey.shade300:Colors.white,
                   isDense: true,
                   counterStyle: AppStyle.counterTextStyle,
                   border: OutlineInputBorder(),
@@ -211,6 +221,8 @@ class _CTextFieldState extends State<CTextField> {
                   contentPadding: AppStyle.fieldContentPadding,
                 ):
                 InputDecoration(
+                  filled: widget.readOnly??false,
+                  fillColor: widget.readOnly??false?Colors.grey.shade300:Colors.white,
                   errorStyle:  AppStyle.errorTextStyle,
                   counterStyle: AppStyle.counterTextStyle,
                   counterText: 'Counter Text',
@@ -241,6 +253,8 @@ class _CTextFieldState extends State<CTextField> {
                 inputFormatters: [if (widget.numbersOnly) FilteringTextInputFormatter.digitsOnly],
                 decoration: widget.showError?
                 InputDecoration(
+                  filled: widget.readOnly??false,
+                  fillColor: widget.readOnly??false?Colors.grey.shade300:Colors.white,
                   isDense: true,
                   counterStyle: AppStyle.counterTextStyle,
                   border: OutlineInputBorder(),
@@ -249,11 +263,13 @@ class _CTextFieldState extends State<CTextField> {
 
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
-                        color: widget.borderColor??Colors.grey, width: 1.5
+                        color: widget.borderColor??Colors.grey.shade300, width: 1.5
                     ),
                   ),
                 ):
                 InputDecoration(
+                  filled: widget.readOnly??false,
+                  fillColor: widget.readOnly??false?Colors.grey.shade300:Colors.white,
                   errorStyle:  AppStyle.errorTextStyle,
                   counterStyle: AppStyle.counterTextStyle,
                   counterText: 'Counter Text',
@@ -264,7 +280,7 @@ class _CTextFieldState extends State<CTextField> {
 
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
-                        color: widget.borderColor??Colors.grey, width: 1.5
+                        color: widget.borderColor??Colors.grey.shade300, width: 1.5
                     ),
                   ),
                 ),
