@@ -18,6 +18,8 @@ import 'package:logger/logger.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/foundation.dart' as foundation;
 
+import 'package:shared_preferences/shared_preferences.dart';
+
 import './custom_widgets/app_style.dart';
 import './custom_widgets/helper.dart';
 import './dashboard/daily_info_model.dart';

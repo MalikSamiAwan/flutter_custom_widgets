@@ -59,6 +59,20 @@ class CustomUrlLauncher{
   }
 }
 
+class StorageHelper{
+  static store(String key, dynamic value) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString(key, "${value.toString()}");
+  }
+  static fetch(String key) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.getString(key);
+  }
+  static delete(String key) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.remove(key);
+  }
+}
 
 
 // 3 = Verbose

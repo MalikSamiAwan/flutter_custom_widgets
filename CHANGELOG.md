@@ -15,3 +15,9 @@ _______________________________
 * Logger package imported
 * Formatted logging added
 _______________________________
+5 July 2022 Monday
+_______________________________
+* shared_preferences package added for generalized storage features
+* StorageHelper class created for managing all general CRUDS through shared_preferences
+* store,fetch and delete functions created using shared_preferences
+_______________________________
