@@ -7,7 +7,7 @@ class CustomUrlLauncher{
   static Future customLaunchUrl(String url) async {
     final Uri uri=Uri.parse(url);
     if (!await launchUrl(uri,)){
-      pprint('Can not launch file $uri',1);
+      pprintNew('Can not launch file $uri',1);
     }
   }
   static Future customLaunchInBrowser(String url) async {
@@ -30,7 +30,7 @@ class CustomUrlLauncher{
       }),
     );
     if (!await launchUrl(uri)){
-      pprint('Can not mail $uri',1);
+      pprintNew('Can not mail $uri',1);
     }
   }
   //phone launcher
@@ -43,10 +43,10 @@ class CustomUrlLauncher{
     canLaunchUrl(uri).then((bool result) async{
       if(result){
         if (!await launchUrl(uri)){
-          pprint('Can not call $uri',1);
+          pprintNew('Can not call $uri',1);
         }
       }else{
-        pprint('Platform do not support call',1);
+        pprintNew('Platform do not support call',1);
       }
     });
 
@@ -75,32 +75,32 @@ class StorageHelper{
 }
 
 
-// // 3 = Verbose
-// // 2 = Warnings/Info
-// // 1 = Errors Only
-// var globalLogLevel = 3;
-//
-// void pprint(dynamic data, [int logLevel = 3]) {
-//   var logger = Logger();
-//   if (foundation.kDebugMode) {
-//     try {
-//       if(logLevel==1){
-//         logger.e("$data");
-//       }else if(logLevel==2){
-//         logger.w("$data");
-//       }else{
-//         logger.v("${data}");
-//       }
-//       // if (foundation.kIsWeb) {
-//       //   print(data);
-//       // } else {
-//       //   var s = StackTrace.current.toString().split('\n');
-//       //   var res = (data ?? 'null').toString() + '  ' + s[1].split('(')[1];
-//       //   print(res);
-//       // }
-//     } catch (e) {
-//       print('Error printing info: see helpers.dart');
-//       print(e);
-//     }
-//   }
-// }
+// 3 = Verbose
+// 2 = Warnings/Info
+// 1 = Errors Only
+var globalLogLevel = 3;
+
+void pprintNew(dynamic data, [int logLevel = 3]) {
+  var logger = Logger();
+  if (foundation.kDebugMode) {
+    try {
+      if(logLevel==1){
+        logger.e("$data");
+      }else if(logLevel==2){
+        logger.w("$data");
+      }else{
+        logger.v("${data}");
+      }
+      // if (foundation.kIsWeb) {
+      //   print(data);
+      // } else {
+      //   var s = StackTrace.current.toString().split('\n');
+      //   var res = (data ?? 'null').toString() + '  ' + s[1].split('(')[1];
+      //   print(res);
+      // }
+    } catch (e) {
+      print('Error printing info: see helpers.dart');
+      print(e);
+    }
+  }
+}
