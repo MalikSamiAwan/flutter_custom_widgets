@@ -21,3 +21,12 @@ _______________________________
 * StorageHelper class created for managing all general CRUDS through shared_preferences
 * store,fetch and delete functions created using shared_preferences
 _______________________________
+
+6 July 2022 Monday
+_______________________________
+* multiple custom buttons are replaced by generalized button with multiple styles
+* non-useable files deleted
+* general code moved to single file
+* code refactoring
+* packages update where required
+_______________________________

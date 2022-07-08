@@ -75,32 +75,32 @@ class StorageHelper{
 }
 
 
-// 3 = Verbose
-// 2 = Warnings/Info
-// 1 = Errors Only
-var globalLogLevel = 3;
-
-void pprint(dynamic data, [int logLevel = 3]) {
-  var logger = Logger();
-  if (foundation.kDebugMode) {
-    try {
-      if(logLevel==1){
-        logger.e("$data");
-      }else if(logLevel==2){
-        logger.w("$data");
-      }else{
-        logger.v("${data}");
-      }
-      // if (foundation.kIsWeb) {
-      //   print(data);
-      // } else {
-      //   var s = StackTrace.current.toString().split('\n');
-      //   var res = (data ?? 'null').toString() + '  ' + s[1].split('(')[1];
-      //   print(res);
-      // }
-    } catch (e) {
-      print('Error printing info: see helpers.dart');
-      print(e);
-    }
-  }
-}
+// // 3 = Verbose
+// // 2 = Warnings/Info
+// // 1 = Errors Only
+// var globalLogLevel = 3;
+//
+// void pprint(dynamic data, [int logLevel = 3]) {
+//   var logger = Logger();
+//   if (foundation.kDebugMode) {
+//     try {
+//       if(logLevel==1){
+//         logger.e("$data");
+//       }else if(logLevel==2){
+//         logger.w("$data");
+//       }else{
+//         logger.v("${data}");
+//       }
+//       // if (foundation.kIsWeb) {
+//       //   print(data);
+//       // } else {
+//       //   var s = StackTrace.current.toString().split('\n');
+//       //   var res = (data ?? 'null').toString() + '  ' + s[1].split('(')[1];
+//       //   print(res);
+//       // }
+//     } catch (e) {
+//       print('Error printing info: see helpers.dart');
+//       print(e);
+//     }
+//   }
+// }
