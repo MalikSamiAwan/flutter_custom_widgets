@@ -89,49 +89,106 @@ class _CTextFieldState extends State<CTextField> {
           ],
 
           if(widget.isContactInput)...[
-            FocusTraversalOrder(
-              order: NumericFocusOrder(widget.order),
-              child: TextFormField(
-                keyboardType: TextInputType.phone,
-                style: widget.inputTextStyle,
-                obscureText: widget.obscureText,
-                onFieldSubmitted: widget.onFieldSubmitted,
-                readOnly: widget.readOnly??false,
-                controller: controller,
-                autofocus: widget.autoFocus,
-                validator: widget.validator,
-                expands: widget.expands,
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                onChanged: widget.onChanged,
-                maxLines: widget.expands ? null : widget.minLines,
-                minLines: widget.expands ? null : widget.minLines,
-                inputFormatters: [
-                  PhoneInputFormatter(allowEndlessPhone: true)
-                ],
-                decoration:
-                widget.showError?
-                InputDecoration(
-                  filled: widget.readOnly??false,
-                  fillColor: widget.readOnly??false?Colors.grey.shade300:Colors.white,
-                  isDense: true,
-                  counterStyle: AppStyle.counterTextStyle,
-                  border: OutlineInputBorder(),
-                  errorBorder: AppStyle.errorFieldBorder,
-                  contentPadding: AppStyle.fieldContentPadding,
-                ):
-                InputDecoration(
-                  filled: widget.readOnly??false,
-                  fillColor: widget.readOnly??false?Colors.grey.shade300:Colors.white,
-                  errorStyle:  AppStyle.errorTextStyle,
-                  counterStyle: AppStyle.counterTextStyle,
-                  counterText: 'Counter Text',
-                  isDense: true,
-                  border: OutlineInputBorder(),
-                  errorBorder: AppStyle.errorFieldBorder,
-                  contentPadding: AppStyle.fieldContentPadding,
+            if(widget.borderColor==null)...[
+              FocusTraversalOrder(
+                order: NumericFocusOrder(widget.order),
+                child: TextFormField(
+                  keyboardType: TextInputType.phone,
+                  style: widget.inputTextStyle,
+                  obscureText: widget.obscureText,
+                  onFieldSubmitted: widget.onFieldSubmitted,
+                  readOnly: widget.readOnly??false,
+                  controller: controller,
+                  autofocus: widget.autoFocus,
+                  validator: widget.validator,
+                  expands: widget.expands,
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  onChanged: widget.onChanged,
+                  maxLines: widget.expands ? null : widget.minLines,
+                  minLines: widget.expands ? null : widget.minLines,
+                  inputFormatters: [
+                    PhoneInputFormatter(allowEndlessPhone: true)
+                  ],
+                  decoration:
+                  widget.showError?
+                  InputDecoration(
+                    filled: widget.readOnly??false,
+                    fillColor: widget.readOnly??false?Colors.grey.shade300:Colors.white,
+                    isDense: true,
+                    counterStyle: AppStyle.counterTextStyle,
+                    border: OutlineInputBorder(),
+                    errorBorder: AppStyle.errorFieldBorder,
+                    contentPadding: AppStyle.fieldContentPadding,
+                  ):
+                  InputDecoration(
+                    filled: widget.readOnly??false,
+                    fillColor: widget.readOnly??false?Colors.grey.shade300:Colors.white,
+                    errorStyle:  AppStyle.errorTextStyle,
+                    counterStyle: AppStyle.counterTextStyle,
+                    counterText: 'Counter Text',
+                    isDense: true,
+                    border: OutlineInputBorder(),
+                    errorBorder: AppStyle.errorFieldBorder,
+                    contentPadding: AppStyle.fieldContentPadding,
+                  ),
                 ),
-              ),
-            )
+              )
+            ]else...[
+              FocusTraversalOrder(
+                order: NumericFocusOrder(widget.order),
+                child: TextFormField(
+                  keyboardType: TextInputType.phone,
+                  style: widget.inputTextStyle,
+                  obscureText: widget.obscureText,
+                  onFieldSubmitted: widget.onFieldSubmitted,
+                  readOnly: widget.readOnly??false,
+                  controller: controller,
+                  autofocus: widget.autoFocus,
+                  validator: widget.validator,
+                  expands: widget.expands,
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  onChanged: widget.onChanged,
+                  maxLines: widget.expands ? null : widget.minLines,
+                  minLines: widget.expands ? null : widget.minLines,
+                  inputFormatters: [
+                    PhoneInputFormatter(allowEndlessPhone: true)
+                  ],
+                  decoration:
+                  widget.showError?
+                  InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                          color: widget.borderColor??Colors.grey.shade300, width: 1.5
+                      ),
+                    ),
+                    filled: widget.readOnly??false,
+                    fillColor: widget.readOnly??false?Colors.grey.shade300:Colors.white,
+                    isDense: true,
+                    counterStyle: AppStyle.counterTextStyle,
+                    border: OutlineInputBorder(),
+                    errorBorder: AppStyle.errorFieldBorder,
+                    contentPadding: AppStyle.fieldContentPadding,
+                  ):
+                  InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                          color: widget.borderColor??Colors.grey.shade300, width: 1.5
+                      ),
+                    ),
+                    filled: widget.readOnly??false,
+                    fillColor: widget.readOnly??false?Colors.grey.shade300:Colors.white,
+                    errorStyle:  AppStyle.errorTextStyle,
+                    counterStyle: AppStyle.counterTextStyle,
+                    counterText: 'Counter Text',
+                    isDense: true,
+                    border: OutlineInputBorder(),
+                    errorBorder: AppStyle.errorFieldBorder,
+                    contentPadding: AppStyle.fieldContentPadding,
+                  ),
+                ),
+              )
+            ]
+
           ]
           else if(widget.isMoneyInput)...[
             FocusTraversalOrder(

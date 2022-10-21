@@ -4,6 +4,10 @@
 
 
 
+21 October 2022 Friday
+_______________________________
+* Contact border color ui modifications
+_______________________________
 
 4 July 2022 Monday
 _______________________________
