@@ -78,7 +78,7 @@ class _CustomSimpleDialogBoxState extends State<CustomSimpleDialogBox> {
               SizedBox(height: 22,),
               Align(
                 alignment: Alignment.bottomRight,
-                child: FlatButton(
+                child: TextButton(
                     onPressed: (){
                       Navigator.of(context).pop();
                       if(widget.dialogModal.onPressed!=null){
